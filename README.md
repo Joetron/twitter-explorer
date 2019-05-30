@@ -1,5 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Twitter Explorer
 
+This project is an exploration itself into the twitter api and data visualizations. At a former job I worked on various visualization components, mainly timelines and maps, and wanted to create my own project to see how I could leverage what I had learned to explore the twitter api and come up with new ideas on how to visualize and interact with data.
+
+The current state of the timeline is purely functional, using bootstrap 4.3 to get in some basic styles and layouts. Future versions may use may own custom css, or use theming in bootstrap.
+
+## Timeline
+
+The timeline represents searches as events. Tweets are grouped together as bars if they are related, or as circles if they are stand alone. Tweets are related if they are retweets or replies to another tweet. Currently there is only a first degree relationship between the tweets, that is a retweet is linked to the original, but retweet of a retweet would not be linked in the same bar. The next step is refactor to use a graph of the tweets.
+
+### Groups
+
+The timeline is currently grouped by searches (a previous version was grouped by hashTags and places but was pulled out until the graph is completed).
+
+### Connections (Future)
+
+Since groups may have the same tweets, a connection will be drawn to draw out the relationship visually. Some work was started for this, but will not be completed until the graph refactor is complete.
+
+### Other
+
+There are tons of ideas I have to interact with timeline, including a date filteronce the foundation completed.
+
+## Getting Started
+
+This app is built upon the latest create-react-app
+
+To use this app locally you will need your own api key from [Twitter developers](https://developer.twitter.com/)
+
+The app runs a local server on port 3001 and runs the app on 3000 and uses concurrently to launch the backend and front end together.
+
+### .env
+
+You will need to create a .env file with your api keys
+
+CONSUMER_KEY=your_twitter_consumer_key<br>
+CONSUMER_SECRET=your_twitter_consumer_secret
+
+### `npm install`
+
+Run "npm install" or "yarn" to build your node modules
+
+### `npm start`
+
+Npm start will start both the backend and the create react app
+
+# This section is included with the Create React App 
 ## Available Scripts
 
 In the project directory, you can run:

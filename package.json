@@ -1,16 +1,29 @@
 {
-  "name": "my-app",
+  "name": "twitter-explorer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "axios": "0.16.2",
+    "concurrently": "3.5.0",
+    "d3": "^5.9.2",
+    "dotenv": "^8.0.0",
+    "isomorphic-fetch": "2.2.1",
+    "react": "16.8.6",
+    "react-bootstrap": "1.0.0-beta.8",
+    "react-dom": "16.8.6",
+    "react-redux": "^7.0.3",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.1",
+    "redux-saga": "^1.0.2",
+    "twit": "^2.2.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server.js",
+    "client": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
